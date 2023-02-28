@@ -1,6 +1,24 @@
 /** Display year is kabisat and display month */
 
 function getDays(month,year){
+    if (isNaN(month) && isNaN(year)) {
+        return "inputan bulan & tahun harus dalam integer";
+      } else if (isNaN(year)) {
+        return `inputan tahun harus dalam integer`;
+      } else if (isNaN(month)) {
+        return `inputan bulan harus dalam integer`;
+      } else {
+        if (
+          (month % 2 === 0 && year % 4 === 0 && year % 100 === 0) ||
+          year % 400 === 0
+        ) {
+          return `This month has 29 days, ${year} adalah tahun kabisat`;
+        } else if (month % 2 === 0) {
+          return "This month has 31 hari";
+        } else {
+          return "This month has 30 hari";
+        }
+    }
     
 }
 

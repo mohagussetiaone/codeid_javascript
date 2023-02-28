@@ -6,7 +6,16 @@
  */
 
 function calculateDistance(a, t){
-
+    const jarak = 1/2*a*t**2
+    if(isNaN(a, t)){
+        return 'Input must an number'
+    }
+    else if (a <= 0 || t <= 0){
+        return 'Accelaration or time must be >= 0'
+    }
+    else {
+        return `Jarak yang ditempuh adalah ${jarak} meter/s`
+    }
 }
 
 console.log(calculateDistance("a","t"));//input must an number

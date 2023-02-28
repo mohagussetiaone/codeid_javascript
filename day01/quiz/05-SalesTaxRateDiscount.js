@@ -4,7 +4,28 @@
   */
 
  function getSalesDiscount(price,tax,discount){
-
+    const total_sales = price;
+    let discount_5 = (discount / 100) * price;
+    let priceAfterDiscount = price - (discount / 100) * price
+    let pajak = ( tax / 100) * priceAfterDiscount;
+    let total_payment = priceAfterDiscount + pajak;
+    if(typeof price !== 'number' && typeof(tax, discount) == 'number'){
+        return 'Price harus dalam angka';
+    } else if (typeof(price,discount) == 'number' && typeof tax !== 'number'){
+        return 'Pajak harus dalam angka';
+    } else if (isNaN(price,tax,discount)) {
+        return 'Price, Tax & Discount harus dalam angka';
+    }else if (!isNaN(price,tax,discount)){
+        return `Total Sales : Rp.${total_sales}
+Discount (${discount}%) : Rp.${discount_5}
+Price After discount : Rp.${priceAfterDiscount}
+Pajak (${tax}%) : Rp.${pajak}
+----------------------------------
+Total Payment : ${Intl.NumberFormat("ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(total_payment)}`
+    }
  }
 
 console.log(getSalesDiscount("a", 1,5));//Price harus dalam angka

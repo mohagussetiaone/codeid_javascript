@@ -1,7 +1,28 @@
 /** hitung total gaji karyawan */
 
 function totalGaji(gaji1, gaji2, gaji3) {
-   
+    return (
+        "Total gaji yang harus dibayar :\n" +
+        `Emp1 : Rp.${gaji1} + Pajak (${taxGaji(gaji1) * 100}%) = Rp.${
+          gaji1 + taxGaji(gaji1) * gaji1
+        }\n` +
+        `Emp2 : Rp.${gaji2} + Pajak (${taxGaji(gaji2) * 100}%) = Rp.${
+          gaji2 + taxGaji(gaji2) * gaji2
+        }\n` +
+        `Emp2 : Rp.${gaji3} + Pajak (${taxGaji(gaji3) * 100}%) = Rp.${
+          gaji3 + taxGaji(gaji3) * gaji3
+        }\n` +
+        `Total: ${Intl.NumberFormat("ID", {
+          style: "currency",
+          currency: "IDR",
+        }).format(
+          gaji1 +
+            taxGaji(gaji1) * gaji1 +
+            (gaji2 + taxGaji(gaji2) * gaji2) +
+            (gaji3 + taxGaji(gaji3) * gaji3)
+        )}`
+    );
+    
 }
 
 function taxGaji(gaji) {
