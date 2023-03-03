@@ -1,7 +1,6 @@
 {
   "name": "batch-21",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -16,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/anaufalfirdaus/Batch21/issues"
   },
-  "homepage": "https://github.com/anaufalfirdaus/Batch21#readme"
+  "homepage": "https://github.com/anaufalfirdaus/Batch21#readme",
+  "keywords": [],
+  "description": ""
 }
